@@ -1,6 +1,8 @@
 package com.ankitsharma.androidkotlinboilerplate.views.main
 
+import com.ankitsharma.androidkotlinboilerplate.data.models.User
 import dagger.Module
+import dagger.Provides
 
 /**
  * Created by ankitsharma on 11/01/18.
@@ -8,5 +10,6 @@ import dagger.Module
 @Module
 class MainActivityModule {
 
-    fun provideMessage(): String = "hello"
+    @Provides
+    fun provideMessage(): String = "hello my message"
 }
