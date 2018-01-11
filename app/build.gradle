@@ -38,7 +38,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.0.0"
     implementation "android.arch.lifecycle:common-java8:1.0.0"
     implementation "android.arch.lifecycle:reactivestreams:1.0.0"
-    kapt "android.arch.lifecycle:compiler:1.0.0"
 
     //okhttp
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
@@ -55,7 +54,9 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
 
     //dagger
+    implementation 'com.google.dagger:dagger:2.13'
     implementation 'com.google.dagger:dagger-android:2.13'
     implementation 'com.google.dagger:dagger-android-support:2.13'
+    kapt 'com.google.dagger:dagger-compiler:2.13'
     kapt 'com.google.dagger:dagger-android-processor:2.13'
 }
