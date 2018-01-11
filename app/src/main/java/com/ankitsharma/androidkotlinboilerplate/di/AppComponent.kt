@@ -1,6 +1,7 @@
 package com.ankitsharma.androidkotlinboilerplate.di
 
 import com.ankitsharma.androidkotlinboilerplate.MyApplication
+import com.ankitsharma.androidkotlinboilerplate.di.modules.ActivityBuilderModule
 import com.ankitsharma.androidkotlinboilerplate.di.modules.AppModule
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -11,7 +12,7 @@ import dagger.android.support.AndroidSupportInjectionModule
  */
 @Component(modules = arrayOf(AndroidSupportInjectionModule::class,
         AppModule::class,
-        ActivityBuilder::class))
+        ActivityBuilderModule::class))
 interface AppComponent: AndroidInjector<MyApplication> {
 
     @Component.Builder
