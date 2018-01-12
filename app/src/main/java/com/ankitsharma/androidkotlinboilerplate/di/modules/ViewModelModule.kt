@@ -2,7 +2,7 @@ package com.ankitsharma.androidkotlinboilerplate.di.modules
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.ankitsharma.androidkotlinboilerplate.common.MyViewModelFactory
+import com.ankitsharma.androidkotlinboilerplate.common.ViewModelFactory
 import com.ankitsharma.androidkotlinboilerplate.di.annotations.ViewModelKey
 import com.ankitsharma.androidkotlinboilerplate.views.main.MainViewModel
 import dagger.Binds
@@ -21,5 +21,5 @@ abstract class ViewModelModule {
     internal abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
 
     @Binds
-    internal abstract fun bindViewModelFactory(factory: MyViewModelFactory): ViewModelProvider.Factory
+    internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }
