@@ -1,5 +1,6 @@
 package com.ankitsharma.androidkotlinboilerplate.views.main
 
+import android.arch.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.widget.Toast
 import com.ankitsharma.androidkotlinboilerplate.R
@@ -8,8 +9,9 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
 
-    @Inject
-    lateinit var message: String
+    @Inject lateinit var message: String
+
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

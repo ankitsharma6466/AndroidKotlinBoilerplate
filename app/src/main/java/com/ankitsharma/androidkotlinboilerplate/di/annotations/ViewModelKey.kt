@@ -1,4 +1,4 @@
-package com.ankitsharma.androidkotlinboilerplate.di
+package com.ankitsharma.androidkotlinboilerplate.di.annotations
 
 import android.arch.lifecycle.ViewModel
 import dagger.MapKey
