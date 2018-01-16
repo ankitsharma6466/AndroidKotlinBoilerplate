@@ -1,5 +1,6 @@
 package com.ankitsharma.androidkotlinboilerplate.di.modules
 
+import com.ankitsharma.androidkotlinboilerplate.di.annotations.ApplicationScope
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -8,8 +9,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 
 /**
@@ -19,13 +20,15 @@ import javax.inject.Singleton
 class NetworkModule {
 
     @Provides
-    @Singleton
+    @ApplicationScope
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor()
+        val interceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { Timber.i(it) })
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        return interceptor
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     fun provideOkhttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
                 .readTimeout(30, TimeUnit.SECONDS)
@@ -35,7 +38,7 @@ class NetworkModule {
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     fun provideRetrofit(okhttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .baseUrl("https://api.github.com")

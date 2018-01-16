@@ -1,6 +1,7 @@
 package com.ankitsharma.androidkotlinboilerplate.di
 
 import com.ankitsharma.androidkotlinboilerplate.MyApplication
+import com.ankitsharma.androidkotlinboilerplate.di.annotations.ApplicationScope
 import com.ankitsharma.androidkotlinboilerplate.di.modules.ActivityBuilderModule
 import com.ankitsharma.androidkotlinboilerplate.di.modules.AppModule
 import com.ankitsharma.androidkotlinboilerplate.di.modules.ViewModelModule
@@ -11,6 +12,7 @@ import dagger.android.support.AndroidSupportInjectionModule
 /**
  * Created by ankitsharma on 11/01/18.
  */
+@ApplicationScope
 @Component(modules = arrayOf(AndroidSupportInjectionModule::class,
         AppModule::class,
         ActivityBuilderModule::class,
