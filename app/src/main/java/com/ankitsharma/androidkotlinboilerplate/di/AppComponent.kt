@@ -3,6 +3,7 @@ package com.ankitsharma.androidkotlinboilerplate.di
 import com.ankitsharma.androidkotlinboilerplate.MyApplication
 import com.ankitsharma.androidkotlinboilerplate.di.modules.ActivityBuilderModule
 import com.ankitsharma.androidkotlinboilerplate.di.modules.AppModule
+import com.ankitsharma.androidkotlinboilerplate.di.modules.ViewModelModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -12,7 +13,8 @@ import dagger.android.support.AndroidSupportInjectionModule
  */
 @Component(modules = arrayOf(AndroidSupportInjectionModule::class,
         AppModule::class,
-        ActivityBuilderModule::class))
+        ActivityBuilderModule::class,
+        ViewModelModule::class))
 interface AppComponent: AndroidInjector<MyApplication> {
 
     @Component.Builder
