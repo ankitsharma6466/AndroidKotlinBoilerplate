@@ -9,7 +9,7 @@ import javax.inject.Singleton
 /**
  * Created by ankitsharma on 11/01/18.
  */
-@Module(includes = arrayOf(NetworkModule::class))
+@Module(includes = arrayOf(NetworkServiceModule::class))
 class AppModule {
 
     @Provides
