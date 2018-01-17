@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit
 
 
 /**
+ * Provides network dependencies for generating services
  * Created by ankitsharma on 11/01/18.
  */
 @Module

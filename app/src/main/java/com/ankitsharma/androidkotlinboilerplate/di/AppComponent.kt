@@ -10,13 +10,14 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 
 /**
+ * Main application component that connects all the dependency proivders(modules) to application
+ *
  * Created by ankitsharma on 11/01/18.
  */
 @ApplicationScope
 @Component(modules = arrayOf(AndroidSupportInjectionModule::class,
         AppModule::class,
-        ActivityBuilderModule::class,
-        ViewModelModule::class))
+        ActivityBuilderModule::class))
 interface AppComponent: AndroidInjector<MyApplication> {
 
     @Component.Builder

@@ -6,6 +6,8 @@ import dagger.android.DaggerApplication
 import timber.log.Timber
 
 /**
+ * Application class that initiates the dependency graph
+ *
  * Created by ankitsharma on 11/01/18.
  */
 class MyApplication: DaggerApplication() {

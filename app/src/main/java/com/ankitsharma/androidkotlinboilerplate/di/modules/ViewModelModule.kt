@@ -10,6 +10,8 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 /**
+ * Provides map of all ViewModels and a ViewModelFactory for dependencies
+ *
  * Created by ankitsharma on 11/01/18.
  */
 @Module
@@ -18,8 +20,8 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(MainViewModel::class)
-    internal abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
+    abstract fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
 
     @Binds
-    internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+    abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
 }

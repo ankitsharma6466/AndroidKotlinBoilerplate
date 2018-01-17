@@ -9,7 +9,4 @@ import dagger.Provides
  */
 @Module
 class MainActivityModule {
-
-    @Provides
-    fun provideMessage(): String = "hello my message"
 }

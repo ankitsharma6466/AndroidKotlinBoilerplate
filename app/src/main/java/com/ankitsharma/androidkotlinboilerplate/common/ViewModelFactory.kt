@@ -2,6 +2,7 @@ package com.ankitsharma.androidkotlinboilerplate.common
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import com.ankitsharma.androidkotlinboilerplate.di.annotations.ApplicationScope
 import java.lang.Exception
 import java.lang.IllegalArgumentException
 import java.lang.RuntimeException
@@ -12,7 +13,7 @@ import javax.inject.Singleton
 /**
  * Created by ankitsharma on 11/01/18.
  */
-@Singleton
+@ApplicationScope
 class ViewModelFactory @Inject constructor(private val creators: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>): ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")

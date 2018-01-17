@@ -5,11 +5,13 @@ import android.content.Context
 import com.ankitsharma.androidkotlinboilerplate.di.annotations.ApplicationScope
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 /**
+ * App level dependencies
  * Created by ankitsharma on 11/01/18.
  */
-@Module(includes = arrayOf(NetworkServiceModule::class))
+@Module(includes = arrayOf(ViewModelModule::class, NetworkServiceModule::class))
 class AppModule {
 
     @Provides

@@ -5,9 +5,10 @@ import com.ankitsharma.androidkotlinboilerplate.di.annotations.ApplicationScope
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
-import javax.inject.Singleton
 
 /**
+ * Provides network services for data
+ *
  * Created by ankitsharma on 16/01/18.
  */
 @Module(includes = arrayOf(NetworkModule::class))
