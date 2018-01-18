@@ -34,6 +34,4 @@ class MainActivity : BaseActivity() {
             Timber.i("repo count received  ${it?.size}")
         })
     }
-
-
 }
