@@ -1,5 +1,6 @@
 package com.ankitsharma.androidkotlinboilerplate.di.modules
 
+import com.ankitsharma.androidkotlinboilerplate.di.annotations.ActivityScope
 import com.ankitsharma.androidkotlinboilerplate.views.main.MainActivity
 import com.ankitsharma.androidkotlinboilerplate.views.main.MainActivityModule
 import dagger.Module
@@ -13,6 +14,7 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityBuilderModule {
 
+    @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(MainActivityModule::class))
     abstract fun bindMainActivity(): MainActivity
 }

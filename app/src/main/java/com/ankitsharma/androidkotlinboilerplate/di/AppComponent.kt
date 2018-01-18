@@ -10,7 +10,7 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 
 /**
- * Main application component that connects all the dependency proivders(modules) to application
+ * Main application component that connects all the dependency providers(modules) to application
  *
  * Created by ankitsharma on 11/01/18.
  */
