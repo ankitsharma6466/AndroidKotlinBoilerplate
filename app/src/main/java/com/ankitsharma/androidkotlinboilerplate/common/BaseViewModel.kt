@@ -11,13 +11,9 @@ import io.reactivex.disposables.CompositeDisposable
  */
 open class BaseViewModel: ViewModel() {
 
-    private val loader: MutableLiveData<Boolean> = MutableLiveData()
+    val loader: MutableLiveData<Boolean> = MutableLiveData()
     val error: MutableLiveData<ErrorData?> = MutableLiveData()
     var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    fun displayLoader(show: Boolean?) {
-        loader.value = show
-    }
 
     override fun onCleared() {
         super.onCleared()

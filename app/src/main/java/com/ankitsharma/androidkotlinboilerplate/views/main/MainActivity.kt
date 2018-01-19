@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.ankitsharma.androidkotlinboilerplate.R
 import com.ankitsharma.androidkotlinboilerplate.common.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -21,7 +22,7 @@ class MainActivity : BaseActivity() {
 
         mainViewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
 
-        Toast.makeText(this, mainViewModel.getMessage(), Toast.LENGTH_SHORT).show()
+        observeLoader(mainViewModel, loaderView)
 
         observeSearchResults()
 
