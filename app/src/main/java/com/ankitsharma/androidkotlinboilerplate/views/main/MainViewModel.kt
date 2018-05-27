@@ -1,6 +1,5 @@
 package com.ankitsharma.androidkotlinboilerplate.views.main
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import com.ankitsharma.androidkotlinboilerplate.common.BaseViewModel
 import com.ankitsharma.androidkotlinboilerplate.common.network.ApiObserver
@@ -17,29 +16,58 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val dataRepository: DataRepository) : BaseViewModel() {
 
     private var msg: String = "test"
-    var repoList: MutableLiveData<List<RepoDTO>> = MutableLiveData()
+    var repoList: MutableLiveData<RepoDTOWrapper> = MutableLiveData()
+
+
+    private var currentPage = 1
+    private var perPage = 20
+    private var query : String = ""
 
     fun getMessage(): String {
         msg = dataRepository.getMessage()
         return msg
     }
 
-    fun searchRepos(query: String){
 
-        displayLoader(true)
+    fun start(query: String){
+        currentPage = 1
+        this.query = query
+        searchRepos()
+    }
 
-        dataRepository.searchRepositories(query)
+    fun onLoadMore(){
+        currentPage++
+        searchRepos()
+    }
+
+    fun onRefresh(){
+        currentPage = 1
+        searchRepos()
+    }
+
+    private fun searchRepos(){
+
+        loader.value = true
+
+        dataRepository.searchRepositories(query,currentPage,perPage)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : ApiObserver<RepoSearchResponse>(compositeDisposable) {
                     override fun onError(e: ErrorData) {
-                        displayLoader(false)
+                        loader.value = false
                         error.value = e
                     }
 
                     override fun onSuccess(data: RepoSearchResponse) {
-                        displayLoader(false)
-                        repoList.value = data.repoList
+                        loader.value = false
+                        repoList.value = RepoDTOWrapper(data.repoList,currentPage)
                     }
                 })
     }
+
+
 }
+
+data class RepoDTOWrapper(
+        var repoList : List<RepoDTO>,
+        var page : Int
+)

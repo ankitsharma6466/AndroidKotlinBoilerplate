@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_star"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:srcCompat="@drawable/ic_star_black_24dp"
+        android:tint="#810086"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/iv_star"
+        app:layout_constraintRight_toRightOf="@id/iv_star"
+        app:layout_constraintTop_toTopOf="@id/iv_star"
+        app:layout_constraintBottom_toBottomOf="@id/iv_star"
+        android:text="123"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/iv_star"
+        app:layout_constraintTop_toTopOf="@id/iv_star"
+        app:layout_constraintBottom_toTopOf="@+id/tv_desc"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="left"
+        android:textSize="16sp"
+        android:text="asdfasdfasdf"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintVertical_chainStyle="packed"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_star"
+        android:gravity="left"
+        android:textSize="12sp"
+        android:text="asdfasdfasdf"
+        />
+
+</android.support.constraint.ConstraintLayout>
