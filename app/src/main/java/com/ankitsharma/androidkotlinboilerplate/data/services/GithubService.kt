@@ -11,5 +11,7 @@ import retrofit2.http.Query
 interface GithubService {
 
     @GET("search/repositories")
-    fun searchRepos(@Query("q") query: String): Observable<RepoSearchResponse>
+    fun searchRepos(@Query("q") query: String,
+                    @Query("page") page : Int,
+                    @Query("per_page") perPage : Int): Observable<RepoSearchResponse>
 }
